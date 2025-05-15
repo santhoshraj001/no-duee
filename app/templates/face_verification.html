@@ -1,0 +1,24 @@
+{% include 'temheader.html' %}
+  <div class="container mt-5" style="background: #FFF;padding: 20px;width:60%">
+    <h2>Face Verification Login</h2>
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+    <div class="mb-3">
+            <img src="{% url 'video_feed' %}" alt="Video Stream">
+
+        </div>
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="student_id">Student ID</label>
+        <input type="text" name="student_id" id="student_id" class="form-control" placeholder="Enter your student ID" required>
+      </div>
+      <!-- You could include instructions or an embedded video stream here if needed -->
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+</body>
+</html>

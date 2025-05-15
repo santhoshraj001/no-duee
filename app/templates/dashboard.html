@@ -1,0 +1,36 @@
+{% include 'user_header.html'%}
+<h1 style="padding-top: 100px;text-transform: capitalize;"><marquee>Welcome {{request.session.name}} </marquee></h1>
+
+ <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+  
+       
+  
+        h2 {
+            font-size: 30px;
+            font-family: serif;
+            color:red;
+            text-align: center;
+            animation: animate 
+                1.5s linear infinite;
+                font-weight: bold;
+        }
+  
+        @keyframes animate {
+            0% {
+                opacity: 0;
+            }
+  
+            50% {
+                opacity: 0.7;
+            }
+  
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+{% include 'user_footer.html'%}

@@ -1,0 +1,124 @@
+{% include 'admin_header.html' %}
+  <div class="container mt-5">
+    <h2 class="mb-4">Add Student Detail Using Face</h2>
+    <!-- Use Django's form submission and CSRF token if applicable -->
+     {% if messages %}
+              {% for i in messages %}
+                <div class="alert alert-success">{{i}}</div>
+              {% endfor %}
+            {% endif %}
+    <form method="post" enctype="multipart/form-data" novalidate style="width:70%;margin: 0 auto;background: #FFF;padding: 20px;">
+      {% csrf_token %}
+      <!-- Student Name -->
+       <div class="mb-3">
+            <label for="face_image" class="form-label">Live Face Capture</label>
+            <img src="{% url 'video_feed' %}" alt="Video Stream">
+
+        </div>
+      <div class="form-group">
+        <label for="student_name">Student Name</label>
+        <input type="text" class="form-control" id="student_name" name="student_name" placeholder="Enter student name" required>
+      </div>
+      
+      <!-- Student Id -->
+      <div class="form-group">
+        <label for="student_id">Student Id</label>
+        <input type="text" class="form-control" id="student_id" name="student_id" placeholder="Enter student id">
+      </div>
+
+      <!-- Email Id -->
+      <div class="form-group">
+        <label for="email_id">Email Id</label>
+        <input type="email" class="form-control" id="email_id" name="email_id" placeholder="Enter email" required>
+      </div>
+
+      <!-- Phone Number -->
+      <div class="form-group">
+        <label for="phone_number">Mobile Number</label>
+        <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Enter mobile number">
+      </div>
+
+      <!-- Date of Birth -->
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" class="form-control" id="dob" name="dob" required>
+      </div>
+
+      <!-- Gender -->
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select class="form-control" id="gender" name="gender" required>
+          <option value="">Select gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <!-- Degree -->
+      <div class="form-group">
+        <label for="degree">Degree</label>
+        <input type="text" class="form-control" id="degree" name="degree" placeholder="Enter degree" required>
+      </div>
+
+      <!-- Department -->
+      <div class="form-group">
+        <label for="dept">Department</label>
+        <input type="text" class="form-control" id="dept" name="dept" placeholder="Enter department" required>
+      </div>
+
+      <!-- Address -->
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea class="form-control" id="address" name="address" rows="3" placeholder="Enter address"></textarea>
+      </div>
+
+      <!-- Country -->
+      <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" class="form-control" id="country" name="country" placeholder="Enter country" value="India" required>
+      </div>
+
+      <!-- State -->
+      <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" class="form-control" id="state" name="state" placeholder="Enter state" value="Tamil Nadu" required>
+      </div>
+
+      <!-- City -->
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" name="city" placeholder="Enter city">
+      </div>
+
+      <!-- Username -->
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+      </div>
+
+      <!-- Student Image -->
+      <div class="form-group">
+        <label for="image">Student Image</label>
+        <input type="file" class="form-control-file" id="image" name="image">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Add Student Details</button>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS and dependencies (via CDN) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+          integrity="sha384-DfXd0Snq06+FZC36MkVD7H8R02Uv+7+qykHIf1eJZGhMkVtJc5SV1XID3lms9E4V"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-LtrjvnR4/J53+ABMQ2O/Qmw0PojvvLgBT5W2Sls8+GuH8otEfBkKd1BqgcpbQ8It"
+          crossorigin="anonymous"></script>
+</body>
+</html>

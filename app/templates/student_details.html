@@ -1,0 +1,63 @@
+{% include 'staff_header.html' %}
+<style>
+table {
+	font-family: times new roman;
+	border-collapse: collapse;
+	width: 100%;
+}
+td, th{
+	border: 1px solid #dddddd;
+	text-align: center;
+	padding: 8px;
+	}
+</style>
+
+ <div class="container" style="margin:0 auto;">
+ 	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="padding-top: 100px;">
+    <div class="card" >
+        <h5 class="card-header">All Students</h5>
+        <div class="card-body">
+            <div class="table-responsive ">
+                <table class="table table-bordered">
+                    <thead style="background: #ff407b;color: #FFF">
+                        <tr class="white">
+	                        <th>S.No</th>
+                            <th>Student Id</th>
+							<th>Student Name</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+							<th>Degree</th>
+							<th>Dept</th>
+                            <th>DOB</th>
+                            <th>Gender</th>
+                            <th>Image</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in detail %}
+                        <tr>
+					        <td>{{forloop.counter}}</td>
+							<td>{{i.student_id}}</td>
+                            <td>{{i.student_name}}</td>
+                            <td>{{i.email_id}}</td>
+                            <td>{{i.phone_number}}</td>
+							<td>{{i.degree}}</td>
+                            <td>{{i.dept}}</td>
+                            <td>{{i.dob}}</td>
+                            <td>{{i.gender}}</td>
+                            <td><a href="/media/{{i.image}}" target="_blank" ><img src="/media/{{i.image}}" style="width:50px;"></a></td>
+							
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="8" class="text-center bg-primary">No Students</td>
+                        </tr>
+                       {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

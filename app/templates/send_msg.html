@@ -1,0 +1,31 @@
+{% include 'staff_header.html' %}
+<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12" style="padding-top: 50px;">
+    <div class="card">
+        <h5 class="card-header">Send Due Reminder Mail</h5>
+        <div class="card-body">
+            {% if messages %}
+                {% for i in messages %}
+                    <div class="alert alert-success">{{i}}</div>
+                {% endfor %}
+            {% endif %}
+            <form  id="basicform" method="post" enctype="multipart/form-data">{% csrf_token %}
+               
+                <div class="form-group">
+                    <label for="inputUserName">Message</label>
+                    <textarea name="msg" required="required"  class="form-control"></textarea>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-6 pl-0">
+                    </div>
+                    <div class="col-sm-6 pl-0">
+                        <p class="text-right">
+                            <button type="submit" class="btn btn-space btn-success">Send Reminder   </button>
+                            
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

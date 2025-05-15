@@ -1,0 +1,27 @@
+.jazzmin-login-page
+{
+	background: url(../images/7.jpg);
+}
+.bg
+{
+	background: url(../img/7.jpg) no-repeat;
+	background-size: 100%;
+	background-cover: fixed;
+
+}
+.login-logo img 
+{
+	width: 200px;
+}
+.login-box
+{
+	background: #FFF;
+	padding: 20px;
+}
+.bg-light {
+    background-color: #FFF !important;
+}
+#gap
+{
+	margin-bottom: 250px;
+}
